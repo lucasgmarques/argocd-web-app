@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-deployment # Name of the deployment
+  
+spec:
+  selector:
+    matchLabels:
+      app: dev-pod # Identify which pod belong to this deployment
+  template:
+    metadata:
+      labels:
+        app: dev-pod # Name of the pod (pod identifier)
+    spec:
+      containers:
+      - name: dev-container # Name of the container inside the pod
+        image: soufiane01/web-app:v1
+        ports:
+        - containerPort: 9090
