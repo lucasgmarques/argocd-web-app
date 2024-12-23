@@ -4,6 +4,7 @@ metadata:
   name: dev-deployment # Name of the deployment
   
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: dev-pod # Identify which pod belong to this deployment
