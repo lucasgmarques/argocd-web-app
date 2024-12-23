@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/lucasgmarques/argocd-web-app.git
     targetRevision: HEAD # The desired branch -> HEAD reffer to main or master
-    path: manifests # Path inside the repository
+    path: k8s # Path inside the repository
   syncPolicy:
     automated:
       prune: true
