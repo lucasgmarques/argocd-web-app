@@ -29,27 +29,7 @@ containers:
   - /usr/local/bin/argocd-server
   - --insecure
 ```
- 5. Crie um Ingress para o ArgoCD:
-```
-#File: ingress.yaml
-
-apiVersion:  networking.k8s.io/v1  
-kind:  Ingress  
-metadata:  
-	name:  argocd-ingress  
-spec:  
-	rules:  
-	-  http:  
-		paths:  
-		-  path:  /  
-			pathType:  Prefix  
-			backend:  
-				service:  
-					name:  argocd-server  
-					port:  
-						number:  80  # Argocd-Server service port
-```
- 6. Aplique o manifesto:
+ 5. Crie um Ingress para o ArgoCD e aplique o manifesto:
 
  `kubectl apply -f ingress.yaml -n argocd`
  
