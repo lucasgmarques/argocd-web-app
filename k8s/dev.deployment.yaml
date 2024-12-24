@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: dev-container # Name of the container inside the pod
-        image: soufiane01/web-app:v1
+        image: soufiane01/web-app:v2
         ports:
         - containerPort: 9090
