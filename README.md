@@ -56,5 +56,7 @@ spec:
 ## 🖥️ Acessar o ArgoCD
  
 Default User: `admin`
-Password: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
+Password: Use o comando abaixo:
+
+`kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
  
