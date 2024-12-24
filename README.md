@@ -1,5 +1,4 @@
 ## 🖥️ Deploy do K3D
-
 1.  Instale o K3D:
 
     `curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash`
@@ -20,7 +19,7 @@
 
 3.  Edite o deployment do ArgoCD-server:
 
-	`kubectl edit -n argocd deployments/argocd-server`
+    `kubectl edit -n argocd deployments/argocd-server`
     
 4.  Adicione a flag **--insecure**:
 ```
@@ -29,13 +28,13 @@ containers:
   - /usr/local/bin/argocd-server
   - --insecure
 ```
- 5. Crie um Ingress para o ArgoCD e aplique o manifesto:
+5.  Crie um Ingress para o ArgoCD e aplique o manifesto:
 
- `kubectl apply -f ingress.yaml -n argocd`
+    `kubectl apply -f ingress.yaml -n argocd`
  
 ## 🖥️ Acessar o ArgoCD
  
-Default User: `admin`
+Default User: *admin*
 Password: Use o comando abaixo:
 
 `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
